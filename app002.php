@@ -30,7 +30,7 @@ foreach($pais as $id => $key) {
 				if($chave == $avo_id) {
 					$checked = "checked"; 
 				 } ?>
-			<td  border='1'><input type='radio' <?= $checked ?> name='idSelecionado' value='<?= $avo['id'] ?>'> <?= $avo['nome'] ?></td>
+			<td  border='1'><input type='radio' <?= $checked ?> name='idSelecionado' disabled value='<?= $avo['id'] ?>'> <?= $avo['nome'] ?></td>
 			<td  border='1'>
 				<?php if($chave == $avo_id) { 
 						foreach($pais_avo as $id => $retorno) {
@@ -43,7 +43,9 @@ foreach($pais as $id => $key) {
 		<?php } ?>
 		
 	</table>
+	<input type="hidden" name="idSelecionado" value="<?=$avo_id?>">
 	<input type="submit" value="Proximo">
+	<a href="app.php"><input type="button" value="Retorno"></a>
 	</form>
 
 </body>
